@@ -3,6 +3,11 @@ import streamlit as st
 import numpy as np
 import time
 
+st.set_page_config(
+    page_title="Hoaii_Zone_Demo2",
+    page_icon="🥸",
+)
+
 
 '### NO.1  心情指数😄'
 if st.checkbox('开始测试“心情指数”'):
@@ -17,7 +22,22 @@ if st.checkbox('开始测试“心情指数”'):
     else :
       st.write('🤯🤯🤯亲，想开点')
 
-'### NO.2  听音乐🎵'
+'### NO.2  最爱美食🍜'
+if st.checkbox('开始“挑美食”'):
+  with st.container():
+    options = st.multiselect(
+         '选择你喜欢的美食吧！',
+         ['汉堡', '烤肉', '火锅', '烧烤','烤鱼', '米线', '麻辣烫', '黄焖鸡'],
+         ['烧烤'])
+    # options 是 list，转成字符串
+    mylist = options
+    mystr2 = "、 ".join(mylist)   
+    st.write('哈哈你选了', mystr2,'😂😂')
+    if '烤肉' in mylist:
+      st.write('我也超喜欢烤肉！')
+
+
+'### NO.3  听音乐🎵'
 if st.checkbox('开始“听音乐”'):
   with st.container():
     option = st.selectbox(
