@@ -11,7 +11,7 @@ import graphviz
 
 
 
-'# 显示pyplot图 bug'
+# '# 显示pyplot图 bug'
 # arr = np.random.normal(1, 1, size=100)
 # plt.hist(arr, bins=20)
 # st.pyplot(plt.hist(arr, bins=20))
@@ -35,13 +35,13 @@ import graphviz
 
 '# 显示bokeh图'
 x = [1, 2, 3, 4, 5]
-y = [60, 71, 50, 42, 57]
+y = [60, 71, 66, 55, 57]
 p = figure(
   title='boken小例子',
   x_axis_label='x',
   y_axis_label='y')
 
-p.line(x, y, legend='somemm', line_width=7)
+p.line(x, y, legend='somemm', line_width=5)
 st.bokeh_chart(p)
 
 
@@ -82,4 +82,4 @@ options = st.multiselect(
 
 st.write('You selected:', options)
 
-st.metric(label="Temperature", value="体重的的", delta="-1.2 °F",help='Njjone')
+st.metric(label="Temperature", value="正能量", delta="1.2 °F",help='Njjone')
