@@ -1,6 +1,8 @@
 import streamlit as st
-import mysql.connector
+# import mysql.connector
 import pandas as pd
+import pymysql
+
 
 
 
@@ -8,7 +10,11 @@ import pandas as pd
 # Uses st.experimental_singleton to only run once.
 @st.experimental_singleton
 def init_connection():
-    return mysql.connector.connect(**st.secrets["mysql"])
+    return pymysql.connect(host = "rm-bp1vdz5fi246je39cao.mysql.rds.aliyuncs.com",
+port = 3306,
+database = "dbdemo",
+user = "dbdemo",
+password = "Haoqing0")
 
 conn = init_connection()
 
@@ -20,7 +26,7 @@ def run_query(zhenqikan):
         cur.execute(zhenqikan)
         return cur.fetchall()
 
-rows1 = run_query("SELECT num,名称,出版周期,网站 from zhenqikan;")
+rows1 = run_query("SELECT 序号,名称,出版周期,网站 from zhenqikan;")
 # 中文字段
 # pd.set_option('display.unicode.ambiguous_as_wide', True)
 # pd.set_option('display.unicode.east_asian_width', True)
