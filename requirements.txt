@@ -6,5 +6,5 @@ numpy==1.23.1
 pandas==1.4.3
 Pillow==9.2.0
 plotly==5.9.0
+PyMySQL==1.0.2
 streamlit==1.11.0
-streamlit_echarts==0.4.0
