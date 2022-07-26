@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import pymysql
 
+st.set_page_config(
+    page_title="Hoaii_Zone_Demo5",
+    page_icon="🎯",
+)
+
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
