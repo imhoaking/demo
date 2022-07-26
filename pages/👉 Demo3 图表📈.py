@@ -65,15 +65,6 @@ graph.edge('sleep', 'runmem')
 st.graphviz_chart(graph)
 
 
-'# 显示图片'
-image = Image.open('./pics/pic1.JPG')
-st.image(image, caption='sea hah',use_column_width=True)
-
-if st.button('Say hello'):
-  st.write('Why hello there')
-else:
-  st.write('Goodbye')
-
 '# 显示多选框'
 options = st.multiselect(
      'What are your favorite colors',
