@@ -3,6 +3,11 @@ import streamlit as st
 import numpy as np
 import time
 
+st.set_page_config(
+    page_title="Hoaii_Zone_Demo1",
+    page_icon="🌃",
+)
+
 
 option = st.sidebar.selectbox(
     '选择一个有趣的小案例😯',
