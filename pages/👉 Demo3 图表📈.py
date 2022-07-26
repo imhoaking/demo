@@ -3,19 +3,19 @@ import streamlit as st
 import numpy as np
 import time
 import matplotlib.pyplot as plt
-# import plotly.figure_factory as ff
 from bokeh.plotting import figure
 import graphviz
-# from PIL import Image
 
-
+st.set_page_config(
+    page_title="Hoaii_Zone_Demo3",
+    page_icon="📈",
+)
 
 
 # '# 显示pyplot图 bug'
 # arr = np.random.normal(1, 1, size=100)
 # plt.hist(arr, bins=20)
 # st.pyplot(plt.hist(arr, bins=20))
-
 
 # '# 显示plotly图'
 # # Add histogram data
@@ -33,36 +33,57 @@ import graphviz
 # # Plot!
 # st.plotly_chart(fig)
 
-'# 显示bokeh图'
-x = [1, 2, 3, 4, 5]
-y = [60, 71, 66, 55, 57]
-p = figure(
-  title='boken小例子',
-  x_axis_label='x',
-  y_axis_label='y')
-
-p.line(x, y, legend='somemm', line_width=5)
-st.bokeh_chart(p)
+st.sidebar.markdown('### 「 疯狂图表🤯 」')
 
 
-'# 显示Graphviz图'
+'### 显示折线图、区域图、棒状图'
+option1=st.checkbox('👈点击查看1')
+if option1:
+    chart_data = pd.DataFrame(
+       np.random.randn(20, 3),
+       columns=['a', 'b', 'c'])
+    '#### 折线图'
+    st.line_chart(chart_data)
+    '#### 区域图'
+    st.area_chart(chart_data)
+    '#### 棒状图'
+    st.bar_chart(chart_data)
+
+
+'### 显示bokeh图'
+option2=st.checkbox('👈点击查看2')
+if option2:
+	x = [1, 2, 3, 4, 5]
+	y = [60, 57, 66, 55, 71]
+	p = figure(
+	  title='boken小例子',
+	  x_axis_label='x',
+	  y_axis_label='y')
+
+	p.line(x, y, legend='somemm', line_width=5)
+	st.bokeh_chart(p)
+
+
+'### 显示Graphviz图'
+option3=st.checkbox('👈点击查看3')
+if option3:
 # Create a graphlib graph object
-graph = graphviz.Digraph()
-graph.edge('run', 'intr')
-graph.edge('intr', 'runbl')
-graph.edge('runbl', 'run')
-graph.edge('run', 'kernel')
-graph.edge('kernel', 'zombie')
-graph.edge('kernel', 'sleep')
-graph.edge('kernel', 'runmem')
-graph.edge('sleep', 'swap')
-graph.edge('swap', 'runswap')
-graph.edge('runswap', 'new')
-graph.edge('runswap', 'runmem')
-graph.edge('new', 'runmem')
-graph.edge('sleep', 'runmem')
+	graph = graphviz.Digraph()
+	graph.edge('run', 'intr')
+	graph.edge('intr', 'runbl')
+	graph.edge('runbl', 'run')
+	graph.edge('run', 'kernel')
+	graph.edge('kernel', 'zombie')
+	graph.edge('kernel', 'sleep')
+	graph.edge('kernel', 'runmem')
+	graph.edge('sleep', 'swap')
+	graph.edge('swap', 'runswap')
+	graph.edge('runswap', 'new')
+	graph.edge('runswap', 'runmem')
+	graph.edge('new', 'runmem')
+	graph.edge('sleep', 'runmem')
 
-st.graphviz_chart(graph)
+	st.graphviz_chart(graph)
 
 
 # '# 显示图片'
@@ -74,12 +95,5 @@ st.graphviz_chart(graph)
 # else:
 #   st.write('Goodbye')
 
-'# 显示多选框'
-options = st.multiselect(
-     'What are your favorite colors',
-     ['Green', 'Yellow', 'Red', 'Blue'],
-     ['Yellow'])
 
-st.write('You selected:', options)
 
-st.metric(label="Temperature", value="正能量", delta="1.2 °F",help='Njjone')
