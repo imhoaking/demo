@@ -20,7 +20,7 @@ def run_query(zhenqikan):
         cur.execute(zhenqikan)
         return cur.fetchall()
 
-rows1 = run_query("SELECT 序号,名称,出版周期,网站 from zhenqikan;")
+rows1 = run_query("SELECT num,名称,出版周期,网站 from zhenqikan;")
 # 中文字段
 # pd.set_option('display.unicode.ambiguous_as_wide', True)
 # pd.set_option('display.unicode.east_asian_width', True)
