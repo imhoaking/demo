@@ -3,9 +3,12 @@ import pymysql
 import pandas as pd
 import os
 
-col_a, col_b, col_c = st.columns([1, 3, 1])
-with col_b:
-    st.header('超级数据库管理系统 v1.0')
+st.set_page_config(
+    page_title="Hoaii_Zone_Demo6",
+    page_icon="🎬",
+)
+
+st.header('豆瓣电影TOP250🎬查询系统  V1.0')
 
 # 抽取全局参数
 all_table = pd.Series(['default_table'])
@@ -15,14 +18,7 @@ btn_flag = True
 
 print('===============')
 
-# 页面布局第一行两列
-col1, col_block1, col2 = st.columns([1, 1, 3])
-with col1:
-    st.info('连接信息')
-with col2:
-    st.error('SQL查询窗口(暂未开发,等一等！)')
 
-st.header('')
 
 # 页面布局第二行四列
 col20, col_block, col21, col22, col23 = st.columns([2, 1, 2, 1, 2])
