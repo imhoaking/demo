@@ -1,20 +1,13 @@
 import streamlit as st
-# import mysql.connector
 import pandas as pd
 import pymysql
-
-
 
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
 @st.experimental_singleton
 def init_connection():
-    return pymysql.connect(host = "rm-bp1vdz5fi246je39cao.mysql.rds.aliyuncs.com",
-port = 3306,
-database = "dbdemo",
-user = "dbdemo",
-password = "Haoqing0")
+	return pymysql.connect(**st.secrets["mysql"])
 
 conn = init_connection()
 
