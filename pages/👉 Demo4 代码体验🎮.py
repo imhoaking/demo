@@ -4,36 +4,57 @@ import pandas as pd
 import numpy as np
 import time
 
-'### 输出json'
-st.json({
-	'foo': 'bar',
-	'baz': 'boz',
-	'stuff': [
-		'stuff 1',
-		'stuff 2',
-		'stuff 3',
-	    'stuff 5',
-   	 ],
-	})
+st.set_page_config(
+    page_title="Hoaii_Zone_Demo4",
+    page_icon="🎮",
+)
+
+option1 = st.sidebar.checkbox('Eetric状态',0,1)
+if option1:
+  with st.expander("Etric状态"):
+    st.metric(label="状态", value="正能量", delta="120% 😄",help='哈哈没啥')
 
 
+option2 = st.sidebar.checkbox('输出json',0,1)
+if option2:
+  with st.expander("输出json"):
+    st.json({
+    	'foo': 'bar',
+    	'baz': 'boz',
+    	'stuff': [
+    		'stuff 1',
+    		'stuff 2',
+    		'stuff 3',
+    	    'stuff 5',
+       	 ],
+    	})
 
-'### 这里是st.write'
-st.write("Here's our first attempt at using data to create a table:")
-st.write(pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-}))
-# pandas只能是数
 
-'### 这里是pd.DataFrame'
-df = pd.DataFrame(
-	np.random.randn(50, 20),
-	columns=('col %d' % i for i in range(20)))
-st.dataframe(df,400,200)  # Same as st.write(df)
-st.dataframe(df.style.highlight_min(axis=0))
-st.table(df)
+option3 = st.sidebar.checkbox('固定数',0,1)
+if option3:
+  with st.expander("固定数"):
+    st.write("Here's our first attempt at using data to create a table:")
+    st.write(pd.DataFrame({
+        'first column': [1, 2, 3, 4],
+        'second column': [10, 20, 30, 40]
+    }))
 
+
+option4 = st.sidebar.checkbox('随机数',0,1)
+if option4:
+  with st.expander("随机数"):
+    df = pd.DataFrame(
+    	np.random.randn(10, 10),
+    	columns=('col %d' % i for i in range(10)))
+    st.dataframe(df,600,100)  # Same as st.write(df)
+    # st.dataframe(df.style.highlight_min(axis=0))
+    st.table(df)
+
+option5 = st.sidebar.checkbox('代码块高亮',0,1)
+if option5:
+  with st.expander("代码块高亮"):
+    code = 'import * from time'
+    st.code(code, language='python')
 
 # def load_data(nrows):
 #     # data = pd.read_csv(DATA_URL, nrows=nrows)
@@ -45,52 +66,20 @@ st.table(df)
 
  # st.dataframe(data)
 
-'### 这里是复选框'
-if st.checkbox('变！显示图标'):
-    chart_data = pd.DataFrame(
-       np.random.randn(20, 3),
-       columns=['a', 'b', 'c'])
-    '折线图'
-    st.line_chart(chart_data)
-    '区域图'
-    st.area_chart(chart_data)
-    '棒状图'
-    st.bar_chart(chart_data)
 
-'### 这里是列表选择框'
-option = st.selectbox(
-    'Which number do you like best?',
-    [88,123,99,66])
+option6 = st.sidebar.checkbox('进度条',0,1)
+if option6:
+  with st.expander("进度条"):
+    # Add a placeholder
 
-'You selected:  😄', option
+    latest_iteration = st.empty()
+    bar = st.progress(0)
+
+    for i in range(100):
+      # Update the progress bar with each iteration.
+      latest_iteration.text(f'完成了 {i+1} % ')
+      bar.progress(i + 1)
+      time.sleep(0.1)
+    ' OK 完成✅ '
 
 
-
-'### 这里是复选框（侧栏）'
-option = st.sidebar.checkbox('复选框要不要选',0,1)
-if option:
-	'复选框，（你选啦！）'
-else :
-	'复选框,（怎么没选！）'
-
-'### 代码块高亮'
-code = 'import * from time'
-st.code(code, language='python')
-
-
-
-
-
-
-'### 进度条'
-'Starting a long computation...'
-# Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
-
-for i in range(100):
-  # Update the progress bar with each iteration.
-  latest_iteration.text(f'Iteration {i+1}')
-  bar.progress(i + 1)
-  time.sleep(0.1)
-'...and now we\'re done!'
