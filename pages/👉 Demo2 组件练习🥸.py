@@ -45,19 +45,19 @@ if st.checkbox('开始“听音乐”'):
        ('阿飞的小蝴蝶', '夜曲','倔强','后来'))
     '👇以下歌曲是《',option,'》'
     if option=='阿飞的小蝴蝶':
-      audio_file = open('./music/阿飞的小蝴蝶.wav', 'rb')
+      audio_file = open('./music/阿飞的小蝴蝶', 'rb')
       audio_bytes = audio_file.read()
       st.audio(audio_bytes, format='audio/ogg')
     elif  option=='夜曲':
-      audio_file = open('./music/夜曲.wav', 'rb')
+      audio_file = open('./music/夜曲', 'rb')
       audio_bytes = audio_file.read()
       st.audio(audio_bytes, format='audio/ogg')
     elif  option=='倔强':
-      audio_file = open('./music/倔强.wav', 'rb')
+      audio_file = open('./music/倔强', 'rb')
       audio_bytes = audio_file.read()
       st.audio(audio_bytes, format='audio/ogg')
     elif  option=='后来':
-      audio_file = open('./music/后来.wav', 'rb')
+      audio_file = open('./music/后来', 'rb')
       audio_bytes = audio_file.read()
       st.audio(audio_bytes, format='audio/ogg')
 
