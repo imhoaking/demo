@@ -9,4 +9,4 @@ plotly==5.9.0
 PyMySQL==1.0.2
 streamlit==1.11.0
 mysql-connector-python==8.0.29
-streamlit-aggrid==0.2.5
+streamlit-aggrid==0.2.3.post2
