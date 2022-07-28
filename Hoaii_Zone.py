@@ -25,7 +25,7 @@ st.markdown(
 
     #### About ME
     -  ###### 💰 Work | TNU 
-    -  ###### 🌿 Subject | Education Technology International & Chinese Language Education
+    -  ###### 🌿 Subject | Education Technology  &  International Chinese Language Education
     -  ###### 🌈 Study | Python & STEAM & NPL & PBL ……
     -  ###### 📧 Contact | [Email](mailto:837088178@qq.com) 
 
