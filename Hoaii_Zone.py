@@ -50,8 +50,4 @@ with st.expander("🥹 记录下还不太会的操作"):
 st.sidebar.markdown('# 🤩🤩')
 st.sidebar.markdown('### 「 一个学了点教育 , 还学了点技术的伪程序媛👸🏻的人生理想ˉ🍻ˉ」')
 
-st.markdown(
-    """   
-    ##### 点击左上角 > 按钮，选择一个demo体验吧！🫲
-"""
-)
+'##### 点击左上角 > 按钮，选择一个demo体验吧！🫲'
