@@ -7,6 +7,14 @@ st.set_page_config(
     page_icon="🎯",
 )
 
+# 隐藏右边的菜单以及页脚
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
