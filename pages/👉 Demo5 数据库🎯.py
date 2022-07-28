@@ -1,11 +1,18 @@
 import streamlit as st
-import pandas as pd
 import pymysql
 
 st.set_page_config(
     page_title="Hoaii_Zone_Demo5",
     page_icon="🎯",
 )
+
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 # Initialize connection.
@@ -30,14 +37,7 @@ rows1 = run_query("SELECT 序号,名称,出版周期,网站 from zhenqikan;")
 # pd.set_option('display.unicode.east_asian_width', True)
 
 
-# 隐藏右边的菜单以及页脚
-hide_streamlit_style = """
-<style>
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-</style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 
 # Print results.
 with st.expander("查看国际中文教育期刊（text）"):
