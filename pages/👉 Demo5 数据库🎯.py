@@ -7,14 +7,6 @@ st.set_page_config(
     page_icon="🎯",
 )
 
-# 隐藏右边的菜单以及页脚
-hide_streamlit_style = """
-<style>
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-</style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
@@ -37,6 +29,15 @@ rows1 = run_query("SELECT 序号,名称,出版周期,网站 from zhenqikan;")
 # pd.set_option('display.unicode.ambiguous_as_wide', True)
 # pd.set_option('display.unicode.east_asian_width', True)
 
+
+# 隐藏右边的菜单以及页脚
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Print results.
 with st.expander("查看国际中文教育期刊（text）"):
