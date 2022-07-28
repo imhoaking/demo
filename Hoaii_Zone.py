@@ -12,14 +12,14 @@ st.sidebar.success("### 选择一个 Demo 😜")
 st.markdown(
     """
     
-    Tools  👉  ***Python ｜ [Streamlit](https://docs.streamlit.io) ｜ Sublime Text***
+    Tools  👉  ***Python ｜ [Streamlit](https://docs.streamlit.io) ｜ Sublime Text｜ Mysql｜ Navicat***
     
 
     #### About ME
     -  ###### 💰 Work | TNU 
     -  ###### 🌿 Subject | Education Technology International & Chinese Language Education
     -  ###### 🌈 Study | Python & STEAM & NPL & PBL ……
-    -  ###### 📧 Contact | [Email](mailto:837088178@qq.com)   [Github](https://github.com/imhoaking)
+    -  ###### 📧 Contact | [Email](mailto:837088178@qq.com) 
 
 """
 )
