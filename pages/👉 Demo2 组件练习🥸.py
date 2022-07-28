@@ -50,7 +50,7 @@ if st.checkbox('开始“听音乐”'):
   with st.container():
     option = st.selectbox(
        '选择一首歌曲',
-       ('阿飞的小蝴蝶', '夜曲','倔强','后来'))
+       ('阿飞的小蝴蝶', '夜曲','倔强'))
     '👇以下歌曲是《',option,'》'
     if option=='阿飞的小蝴蝶':
       audio_file = open('./music/阿飞的小蝴蝶.wav', 'rb')
