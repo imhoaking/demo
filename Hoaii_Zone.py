@@ -9,6 +9,14 @@ st.write('# Welcome to Hoaii_Zone 👋👋')
 
 st.sidebar.success("### 选择一个 Demo 😜")
 
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 st.markdown(
     """
     
